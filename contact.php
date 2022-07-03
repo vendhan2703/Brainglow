@@ -1,32 +1,32 @@
+
 <?php
 
+$conn = mysqli_connect("localhost", "root", "", "Brainglow");
 
-//varible setting
- $name= $_REQUEST['name'];
- $email = $_REQUEST['Email'];
- $message = $_REQUEST['Message'];
- $subject = "Message from Contact form !";
+	//if(mysqli_connect_error())
+	//	echo "Connection Error.";
+	//else
+	//	echo"<script>alert('Database Connection Successfully.')</script>";
+//$connection = mysql_connect("localhost", "root", ""); // Establishing Connection with Server
 
- $to ="xxxxxxxxxxxxx@gmail.com";  // change receiving email id 
- 
- $content = "Name : ". $name. "\r\nContact email : ". $email. "\r\n \r\nMessage : \r\n \r\n".$message ; // name [break] email [break] message
- 
+//$db = mysql_select_db("Brainglow", $connection); // Selecting Database from Server
+if(isset($_POST['submit'])){ // Fetching variables of the form which travels in URL
+$name = $_POST['name'];
+$email = $_POST['email'];
+$subject = $_POST['subject'];
+$message = $_POST['message'];
+$sql="insert into contactdetails(name, email, subject, message) values ('$name', '$email', '$subject', '$message')";
+//echo("$sql");
 
+if(mysqli_query($conn,$sql)){
+//Insert Query of SQL
 
-// check input fields
-if ( empty($name)|| empty($email)|| empty($message))
-{
-echo"<script type='text/javascript'>alert('Please fill all correct');
-    window.history.go(-1);
-    </script>";
+echo "<script>alert('Data Inserted successfully...!!')</script>";
+include 'index.html';
 }
-else 
-{ mail($to,$subject,$content);
-
-    echo"<script type='text/javascript'>alert('Your message sent succesfully ');
-    window.history.go(-1);
-    </script>";
+else{
+echo "<p>Insertion Failed <br/> Some Fields are Blank....!!</p>";
 }
-
-
+}
+mysql_close($conn); // Closing Connection with Server
 ?>
