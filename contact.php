@@ -1,5 +1,6 @@
 
 <?php
+
 //$conn = mysqli_connect("localhost", "root", "", "Brainglow");
 $conn = mysqli_connect("brainglow.cmvt0pptjmwp.us-east-1.rds.amazonaws.com:3306","admin","Coimbatore14","Brainglow");
 //$connection = mysql_connect("localhost", "root", ""); // Establishing Connection with Server
@@ -17,7 +18,7 @@ if(mysqli_query($conn,$sql)){
 //Insert Query of SQL
 
 echo "<script>alert('Message Send Successfully...!!')</script>";
-include 'index.html';s
+include 'index.html';
 }
 else{
 echo "<p>Insertion Failed <br/> Some Fields are Blank....!!</p>";
