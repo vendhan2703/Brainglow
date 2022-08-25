@@ -1,12 +1,8 @@
 
 <?php
 
-$conn = mysqli_connect("localhost", "root", "", "Brainglow");
-
-	//if(mysqli_connect_error())
-	//	echo "Connection Error.";
-	//else
-	//	echo"<script>alert('Database Connection Successfully.')</script>";
+//$conn = mysqli_connect("localhost", "root", "", "Brainglow");
+$conn = mysqli_connect("brainglow.cmvt0pptjmwp.us-east-1.rds.amazonaws.com:3306","admin","Coimbatore14","Brainglow");
 //$connection = mysql_connect("localhost", "root", ""); // Establishing Connection with Server
 
 //$db = mysql_select_db("Brainglow", $connection); // Selecting Database from Server
@@ -21,7 +17,7 @@ $sql="insert into contactdetails(name, email, subject, message) values ('$name',
 if(mysqli_query($conn,$sql)){
 //Insert Query of SQL
 
-echo "<script>alert('Data Inserted successfully...!!')</script>";
+echo "<script>alert('Message Send Successfully...!!')</script>";
 include 'index.html';
 }
 else{
