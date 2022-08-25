@@ -1,7 +1,7 @@
 
 <?php
 
-$conn = mysqli_connect("sql213.epizy.com", "epiz_32095823", "G0KG2tXNMslrkB", "epiz_32095823_Brainglowacademy");
+$conn = mysqli_connect("brainglow.cmvt0pptjmwp.us-east-1.rds.amazonaws.com,3306", "admin", "Coimbatore14", "Brainglow");
 
 	//if(mysqli_connect_error())
 	//	echo "Connection Error.";

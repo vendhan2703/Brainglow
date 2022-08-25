@@ -126,7 +126,7 @@ h1, h2, h3, h4, h5, h6 {
   font-family: "Poppins", sans-serif;
 }
 #header .logo a {
-  color: #5fcf80;
+  color: #246537;
 }
 #header .logo img {
   max-height: 40px;
@@ -1364,7 +1364,7 @@ section {
   bottom: 0;
   height: 2.5em;
   margin: auto;
-  background: red;
+  background: rgb(219, 216, 216);
 }
  
 .left {
